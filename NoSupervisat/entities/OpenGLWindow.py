@@ -340,11 +340,11 @@ class Scene:
                                 car.teclat(0.5)
                               #  car.steer=0
                         if up_pressed:
-                                    car.current_speed = min(10, car.current_speed + 5 * 0.03)
+                                    car.current_speed = min(8, car.current_speed + 5 * 0.03)
                                     car.vel(1)
                         else:
                                     if down_pressed:
-                                        car.current_speed = max(car.current_speed - 5 * 0.03, 1)
+                                        car.current_speed = max(car.current_speed - 5 * 0.03, 2)
                                         car.vel(0)
                                     else:
                                         car.vel(0.5)
