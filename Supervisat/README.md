@@ -1,1 +1,1 @@
-Aquí trobareu el codi de l'aprenentatge supervisat.
+Codi referent a la part del projecte de l'aprenentatge supervisat.
