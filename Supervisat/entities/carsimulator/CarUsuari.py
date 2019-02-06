@@ -262,16 +262,9 @@ class CarUsuari(object):
             min_distance = self.__collision_distance+1
             min_point = None
 
-            # para cada segmento
-            # num = 5
-            # num_segments = len(self.__track.segments)
-            # seg = (self.__current_segment - num + num_segments) % num_segments
-            # seg_fin = (self.__current_segment + num + num_segments + 1) % num_segments
+
             for s in self.__track.segments:
-            #while seg != seg_fin:
-                # para cada region de colision
-                # s = self.__track.segments[seg]
-                # seg = (seg + 1) % num_segments
+
 
                 for cr in s.collisionRegions:
                     points = cr.points
@@ -327,26 +320,6 @@ class CarUsuari(object):
     def get_total_distance(self) -> float:
         return self.__total_segment_distance + self.__distance
 
-
-    # jo
-
-
-
-
-
-
-
-
-
-
-
-
-    #@property
-
-    #def recorregut(self) -> List[Point2D]:
-    #    return self.__recorregut
-    #def guardarAngles(self) -> List[float]:
-    #   return self.__guardarAngles
     def teclat(self,tecla : float):
           self.__teclat=tecla
           return self.__teclat
@@ -357,17 +330,3 @@ class CarUsuari(object):
 
 
 
-
-
-    #
-    #
-    # def torna(self):
-    #     #self.__CarLogState.add(self.__recorregut[len(self.__recorregut)-1].x,self.__recorregut[len(self.__recorregut)-1].y,self.__guardarAngles[len(self.__guardarAngles)-1],self.__teclat)
-    #     self.__CarLogState.add(self.position.x,
-    #                            self.position.y,
-    #                            self.bounds.rotation_in_radians, self.__teclat)
-    #
-    #     self.__CarLogState.save()
-    #
-    # def mostra(self):
-    #     self.__CarLogState.load()
