@@ -60,20 +60,7 @@ class Scene:
         # renderizamos el circuito
         self._race.render()
 
-        # mostramos el punto que determina la distancia recorrida por el coche
-        # for s in self._race.track.segments:
-        #     if s.in_segment(c.position):
-        #         point = s.advanced(c.position)
-        #         if point is not None:
-        #             glBegin(GL_LINES)
-        #             glColor3f(1, 1, 1)
-        #             glVertex3f(point.x-1, point.y-1, 0)
-        #             glVertex3f(point.x+1, point.y+1, 0)
-        #             glVertex3f(point.x-1, point.y+1, 0)
-        #             glVertex3f(point.x+1, point.y-1, 0)
-        #             glEnd()
-
-        # visualización 2D
+      
         glMatrixMode(GL_PROJECTION)
         glLoadIdentity()
         glOrtho(-1*self._aspect_ratio, 1*self._aspect_ratio, -1, 1, -1, 1)
@@ -190,11 +177,11 @@ class Scene:
 
                         # VELOCITAT!
                         if up_pressed:
-                                car.current_speed = min(10,car.current_speed+5*0.03)
+                                car.current_speed = min(8,car.current_speed+5*0.03)
                                 car.vel(1)
                         else:
                             if down_pressed:
-                                    car.current_speed = max(car.current_speed - 5 * 0.03,1)
+                                    car.current_speed = max(car.current_speed - 5 * 0.03,2)
                                     car.vel(0)
                             else:
                                 car.vel(0.5)
@@ -210,16 +197,7 @@ class Scene:
 
             self._race.simulate(elapsed_time)
 
-            ##################
-            # chapuza jose maria
 
-            #if len(self._race.cars) > 0:
-            #    c = self._race.cars[0]
-            #    l = c.log
-            #    if (l.time > 5):
-            #        l.setCar(c, 3)
-
-            ##################
 
             if self._race.get_first_car().laps == 2 or (self._race.alives == 0):
                 for c in self._race.cars:
