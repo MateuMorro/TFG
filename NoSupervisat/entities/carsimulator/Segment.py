@@ -95,16 +95,7 @@ class Segment(object):
 
 
 
-                    # glVertex3f(self._p1.x, self._p1.y, 0)
-        # glVertex3f(self._pb1.x, self._pb1.y, 0)
-        # glVertex3f(self._pb3.x, self._pb3.y, 0)
-        # glVertex3f(self._p3.x, self._p3.y, 0)
-        # glBegin(GL_LINE_LOOP)
-        # glVertex3f(self._p2.x, self._p2.y, 0)
-        # glVertex3f(self._pb2.x, self._pb2.y, 0)
-        # glVertex3f(self._pb4.x, self._pb4.y, 0)
-        # glVertex3f(self._p4.x, self._p4.y, 0)
-        # glEnd()
+
 
     def in_segment(self, point: Point2D) -> bool:
         return inside_polygon(point, [self._p1, self._p3, self._p4, self._p2])
