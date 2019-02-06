@@ -349,17 +349,7 @@ class Scene:
                                     else:
                                         car.vel(0.5)
 
-                        # VELOCITAT!
-                        # if up_pressed:
-                        #         car.current_speed = min(10,car.current_speed+5*0.05)
-                        #         car.vel(1)
-                        # else:
-                        #     if down_pressed:
-                        #             car.current_speed = max(car.current_speed - 5 * 0.05,1)
-                        #             car.vel(0)
-                        #     else:
-                        #         car.vel(0.5)
-
+                     
 
                     else:
                         g = []
@@ -388,7 +378,7 @@ class Scene:
                         speed = r[1]
                         car.steer = steer[0]-0.5
                         car.rotate((steer[0]-0.5) * 10*(2*math.pi)/360)
-                        #car.current_speed = 7  # 3 + min(3, speed[0] * 3)
+                       
                         car.current_speed = 3 + min(3, speed[0] * 3)
 
                         self._tempsCar[car.number-1]=self._tempsCar[car.number-1]+1
@@ -397,23 +387,14 @@ class Scene:
             self._temps = self._temps + 1
             self._race.simulate(elapsed_time)
 
-            ##################
-            # chapuza jose maria
-
-            #if len(self._race.cars) > 0:
-            #    c = self._race.cars[0]
-            #    l = c.log
-            #    if (l.time > 5):
-            #        l.setCar(c, 3)
-
-            ##################
 
 
-######################## PROVA MATEU ## ponderacio 3 i 4
+
+
             for c in self._race.cars:
                 if not c.collision:
                     c.collision_time = self._race.total_time
-#####################33
+
 
             print(self._race.get_first_car().number)
             print(self._race.total_time)
@@ -535,40 +516,9 @@ else:
 
 
 
-
-
-
-################# ENTRENAMENT
-# HE FET 2 SIMULACIONS EN TOTS ELS CIRCUITS DE 1-13 per a cada una de les funcions de ponderacio
-# Quan es fa 1 simulacio no es modifiquen les xarxes neuronals
-
-#circuit=15
-
-#Si val 0 va de facil a dificil [1,2,3,...., 12]
-#Si val 1 va de dificil a facil  [12,11,10,....,1]
-#de_facil_a_dificil=1
-
-# ponderacio: 1 distancia, 2 distancia^2, 3 velocitat , 4 velcoitat*distancia , 5 GENÈTICA A LA DISTANCIA
-#ponderacio=5
-
-
-#simulacions=1
-
-#cotxes=1 #30
-
-#x=[]
-#for i in range(cotxes):
-#     x.append(Network([21, 25, 2]))
-
-#x=load30xarxes(ponderacio,de_facil_a_dificil).xarxa()
-#x=[load30xarxes(ponderacio,de_facil_a_dificil).xarxa_cotxe_n(7-1)]
-
-
 if __name__ == '__main__':
-        #main(circuit,usuari,cotxes)
-        g=0 # si és 1 se guarda en UsuariCircuit el cotxe inicial
-        #usuari=0 el du s'usuari
-        # circuit, usuari, cotxes, si se guarda o no, xarxes,simulacions
-        #usuari=1
+   
+        g=0 
+
         main(circuit,usuari,cotxes,g,x,simulacions,ponderacio,de_facil_a_dificil)
 
