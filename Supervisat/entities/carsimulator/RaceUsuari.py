@@ -129,21 +129,7 @@ class RaceUsuari(object):
         return first_car
 
     def render(self):
-        # renderizamos los puntos detectados por los "sensores" del coche
-        # jose maria
-        # for c in self._cars:
-        #     if not c.collision:
-        #         for cc in c.collision_points:
-        #             glBegin(GL_LINES)
-        #             glColor3f(1, 1, 0)
-        #             glVertex3f(cc.x - 1, cc.y - 1, 0)
-        #             glVertex3f(cc.x + 1, cc.y + 1, 0)
-        #             glVertex3f(cc.x - 1, cc.y + 1, 0)
-        #             glVertex3f(cc.x + 1, cc.y - 1, 0)
-        #             glEnd()
-        #
-        # # renderizamos el circuito
-        # self._track.render()
+
 
         c = self._cars[0]
         if not c.collision:
@@ -167,16 +153,7 @@ class RaceUsuari(object):
                     glEnd()
 
 
-                    # for cc in c.collision_points:
-                    #     glBegin(GL_LINES)
-                    #     glColor3f(1, 1, 0)
-                    #     glVertex3f(cc.x - 1, cc.y - 1, 0)
-                    #     glVertex3f(cc.x + 1, cc.y + 1, 0)
-                    #     glVertex3f(cc.x - 1, cc.y + 1, 0)
-                    #     glVertex3f(cc.x + 1, cc.y - 1, 0)
-                    #     glEnd()
 
-                # renderizamos el circuito
         self._track.render()
 
         for x in range(1, self.__number_cars):
@@ -201,30 +178,13 @@ class RaceUsuari(object):
                         glVertex3f(c.collision_points[i].x + 1, c.collision_points[i].y - 1, 0)
                         glEnd()
 
-                 # for cc in c.collision_points:
-                 #     glBegin(GL_LINES)
-                 #     glColor3f(1, 1, 0)
-                 #     glVertex3f(cc.x - 1, cc.y - 1, 0)
-                 #     glVertex3f(cc.x + 1, cc.y + 1, 0)
-                 #     glVertex3f(cc.x - 1, cc.y + 1, 0)
-                 #     glVertex3f(cc.x + 1, cc.y - 1, 0)
-                 #     glEnd()
 
-         # renderizamos el circuito
            self._track.render()
 
 
-
-
-        # renderizamos los coches
-        #jo
         self._cars[0].render(0)
         for x in range(1, self.__number_cars):
             self._cars[x].render(1)
-
-        #jose maria
-        #for c in self._cars:
-        #    c.render(1)
 
 
 
