@@ -47,30 +47,6 @@ class Track(object):
                 self._segments[0].collisionRegions.append(Polygon(i))
 
 
-            #Obstacles circuit 7
-            # if n==7:
-            #     self._segments[0].collisionRegions.append(Polygon([Point2D(36, 23), Point2D(30, 23), Point2D(33, 19),Point2D(36, 19)]))
-            #     self._segments[0].collisionRegions.append(Polygon([Point2D(60, 20), Point2D(66, 20), Point2D(66, 26), Point2D(60, 26)]))
-            #     self._segments[0].collisionRegions.append(Polygon([Point2D(127, 60), Point2D(129, 53), Point2D(131, 56)]))
-            #     self._segments[0].collisionRegions.append(Polygon([Point2D(60, 100), Point2D(64, 100), Point2D(64, 103), Point2D(62, 103)]))
-            #     self._segments[0].collisionRegions.append(Polygon([Point2D(60, 43), Point2D(64, 44), Point2D(64, 45), Point2D(60, 51)]))
-            #     self._segments[0].collisionRegions.append(Polygon([Point2D(82, 106), Point2D(96, 104), Point2D(93, 108)]))
-            #
-
-
-            #Obstacles circuit 10
-            # if n==10:
-            #     self._segments[0].collisionRegions.append(Polygon([Point2D(38, 102), Point2D(44, 106), Point2D(64, 103)]))
-            #     self._segments[0].collisionRegions.append(Polygon([Point2D(72, 75), Point2D(79, 75), Point2D(76, 70)]))
-            #     self._segments[0].collisionRegions.append(Polygon([Point2D(106, 20), Point2D(110, 18), Point2D(112, 23), Point2D(109, 27), Point2D(105, 26)]))
-
-            # Obstacles circuit 11
-
-            #if n==11:
-            #    self._segments[0].collisionRegions.append(Polygon([Point2D(70, 122), Point2D(85, 120), Point2D(70, 115)]))
-            #    self._segments[0].collisionRegions.append(Polygon([Point2D(70, 103), Point2D(85, 103), Point2D(70, 110)]))
-
-
 
 
 
