@@ -15,7 +15,7 @@ class Race(object):
         self.__number_cars = m
         self.__total_time = 0
         self.__alives = self.__number_cars
-        # inicializacion de coches
+
 
         #Cotxo que duc jo
         car = Car(self._track, 2, 1, Point2D(-1, 0), 0,n)
@@ -40,7 +40,7 @@ class Race(object):
 
     def reset(self):
         self.__total_time = 0
-        # obtenemos los pesos de los coches
+
         weights = [max(c.get_weight(), 0) for c in self._cars]
         total_weight = 0
         sum_weights = []
@@ -52,7 +52,7 @@ class Race(object):
 
         self.__alives = self.__number_cars
         self._cars = []
-        # inicializacion de coches
+
 
 
 
@@ -175,7 +175,7 @@ class Race(object):
             if not c.collision:
                 c.simulate(elapsed_time)
 
-                # miramos si ha habido colision
+
                 for segment in self._track._segments:
                     if segment.collides(c):
                         c.collision = True
@@ -184,8 +184,7 @@ class Race(object):
                 if c.collision:
                     self.__alives = self.__alives - 1
 
-                # determinamos si hay cambio de segmento (al siguiente o al anterior)
-                # y calculamos la distancia total recorrido por los segmentos atravesados
+
                 ns = self._track.next_segment(c.current_segment)
                 if self.track.segments[ns].in_segment(c.bounds.position):
                     c.total_segment_distance = c.total_segment_distance + self.track.segments[c.current_segment].total_distance
@@ -200,7 +199,7 @@ class Race(object):
                         c.current_segment = ps
                         c.total_segment_distance = c.total_segment_distance - self.track.segments[c.current_segment].total_distance
 
-                # distancia recorrida en el segmento actual
+                # distancia recorreguda en el segment actual
                 cs = self.track.segments[c.current_segment]
                 c.distance = (cs.point_ini - cs.advanced(c.bounds.position)).length()
 
