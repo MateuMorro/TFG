@@ -24,7 +24,7 @@ class CarUsuari(object):
         self.__bounds = Rectangle(width, length)
         self.__bounds.center = center
         self.speed_in_meters_per_sec = 20
-        #self.speed_in_meters_per_sec = 0.0001
+
 
         self.__tipo=tipo # 0 si el duc jo, 1 si el du sa xarxa
 
@@ -34,8 +34,7 @@ class CarUsuari(object):
         angles = [45, 65, 75, 85, 90, 95, 105, 115, 135]
         angle_ini = 10
         num_angles = self.get_num_angles()
-        # se generan los angulos para hallar las colisiones, angulo de orientacion de los sensores
-        # 90 es dirección que circula el coche
+
         angles = [angle_ini+(x*(180-angle_ini*2)/(num_angles-1)) for x in range(0, num_angles)]
         self.__collision_distance = 150
         self.__vectors = [Point2D(math.sin(angle/180*math.pi)*self.__collision_distance, math.cos(angle/180*math.pi)*self.__collision_distance) for angle in angles]
@@ -52,12 +51,10 @@ class CarUsuari(object):
         self.number = 0
 
 
-        #self.__guardarAngles=[]
-        #self.__recorregut=[]
-        #self.__angle=[]
+
         self.__teclat=0
         self.__guardarTeclat=[]
-        #self.__CarLogState=CarLogState(n)
+
 
         self.__tempsCar=0
         self.__SensorCentral=[8] * 10
@@ -212,7 +209,7 @@ class CarUsuari(object):
             if vel==0:
                 self.__current_speed=self.__current_speed-5*0.03
 
-        # mostrar o no els sensors
+
         self.compute_collision_points()
 
     # def colocarAmbXarxa(self,sensors,tecla):
@@ -232,15 +229,13 @@ class CarUsuari(object):
         mov = Point2D(cos * elapsed_time * self.current_speed, sin * elapsed_time * self.current_speed)
 
         self.__bounds.position = self.__bounds.position + mov
-        #nou
+
         #self.__guardarAngles.append(self.__bounds.rotation_in_radians)
         #self.__recorregut.append(self.__bounds.position)
 
         self.__tempsCar=self.__tempsCar+1
 
 
-
-        # calculamos los puntos de colision
         self.compute_collision_points()
 
     def compute_collision_points(self):
