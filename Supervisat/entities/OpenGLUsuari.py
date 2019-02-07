@@ -95,9 +95,9 @@ class SceneUsuari:
         glLoadIdentity()
 
         # la cámara está sobre el primer coche
-        # más adelante se colocará sobe el coche más adelantado
+
         c = self._race.get_first_car()
-        #c = self._race._cars[1]
+        cotxe_xarxa = self._race._cars[0]
 
         gluLookAt(c.position.x, c.position.y, 120, c.position.x, c.position.y, 0, 0, 1, 0)
 
@@ -106,7 +106,20 @@ class SceneUsuari:
         # renderizamos el circuito
         self._race.render()
 
+        # mostramos el punto que determina la distancia recorrida por el coche
+        # for s in self._race.track.segments:
+        #     if s.in_segment(c.position):
+        #         point = s.advanced(c.position)
+        #         if point is not None:
+        #             glBegin(GL_LINES)
+        #             glColor3f(1, 1, 1)
+        #             glVertex3f(point.x-1, point.y-1, 0)
+        #             glVertex3f(point.x+1, point.y+1, 0)
+        #             glVertex3f(point.x-1, point.y+1, 0)
+        #             glVertex3f(point.x+1, point.y-1, 0)
+        #             glEnd()
 
+        # visualización 2D
         glMatrixMode(GL_PROJECTION)
         glLoadIdentity()
         glOrtho(-1*self._aspect_ratio, 1*self._aspect_ratio, -1, 1, -1, 1)
@@ -121,8 +134,8 @@ class SceneUsuari:
 
         glColor3f(1, 1, 1)
         width_bar = 0.01
-        x = -len(c.collision_distances) / 2 * width_bar - 0.2
-        for dis in c.collision_distances:
+        x = -len(cotxe_xarxa.collision_distances) / 2 * width_bar - 0.2
+        for dis in cotxe_xarxa.collision_distances:
             y1 = -0.9
             y2 = y1 + dis / 150
             glBegin(GL_QUADS)
@@ -135,7 +148,7 @@ class SceneUsuari:
 
         glColor3f(1, 1, 1)
         width_bar = 0.01
-        x = -len(c.collision_distances) / 2 * width_bar + 0.2
+        x = -len(cotxe_xarxa.collision_distances) / 2 * width_bar + 0.2
         if self.entrada_red != None:
             for dis in self.entrada_red[11:20]:
                 y1 = -0.9
@@ -151,7 +164,7 @@ class SceneUsuari:
         # mostramos la distancia total recorrida
 
         glRasterPos2f(-0.15 * self._aspect_ratio, -0.95)
-        text = "Sensores"
+        text = "Sensors"
         for ch in text:
             glutBitmapCharacter(GLUT_BITMAP_8_BY_13, ctypes.c_int(ord(ch)))
 
@@ -199,7 +212,7 @@ class SceneUsuari:
 
         # mostramos la distancia total recorrida
         glRasterPos2f(-0.95*self._aspect_ratio, -0.9)
-        text = "Distància: {0:.2f}".format(c.get_total_distance())
+        text = "Distància: {0:.2f}".format(cotxe_xarxa.get_total_distance())
         for ch in text:
             glutBitmapCharacter(GLUT_BITMAP_8_BY_13, ctypes.c_int( ord(ch)))
 
@@ -207,12 +220,12 @@ class SceneUsuari:
         if self._best_time is not None:
             text = "Temps i MillorTemps: {0:.2f},{1:.2f}".format(self._race.total_time, self._best_time)
         else:
-            text = "Temps :{0:.2f}".format(self._race.total_time)
+            text = "Temps: {0:.2f}".format(self._race.total_time)
         for ch in text:
             glutBitmapCharacter(GLUT_BITMAP_8_BY_13, ctypes.c_int( ord(ch)))
 
         glRasterPos2f(-0.95*self._aspect_ratio, -0.80)
-        text = "Voltes: {0}".format(c.laps)
+        text = "Voltes: {0}".format(cotxe_xarxa.laps+1)
         for ch in text:
             glutBitmapCharacter(GLUT_BITMAP_8_BY_13, ctypes.c_int( ord(ch)))
 
@@ -227,7 +240,7 @@ class SceneUsuari:
             glutBitmapCharacter(GLUT_BITMAP_8_BY_13, ctypes.c_int( ord(ch)))
 
         glRasterPos2f(-0.95*self._aspect_ratio, -0.65)
-        text = "Valors: {0:.2f}, {1:.2f}".format(c.current_speed, c.steer)
+        text = "Valors: {0:.2f}, {1:.2f}".format(cotxe_xarxa.current_speed, cotxe_xarxa.steer)
         for ch in text:
             glutBitmapCharacter(GLUT_BITMAP_8_BY_13, ctypes.c_int( ord(ch)))
 
@@ -268,7 +281,38 @@ class SceneUsuari:
         if self._number_simulations==1+self._simulacions:
             exit(0)
 
-            elapsed_time = 80 / 1000
+        #if last_time == 0 or time >= last_time + 30:
+        #if True:
+         #   elapsed_time = (time-last_time)/1000
+         #   elapsed_time = 80/1000
+
+            # conduce la red neuronal
+            # for car in self._race.cars:
+            #     if not car.collision:
+            #         # conduce el usuario
+            #         if car.number == 0:
+            #             if right_pressed:
+            #                 car = self._race.cars[0]
+            #                 car.rotate(-5*(2*math.pi)/360)
+            #                 car.teclat(1)
+            #             else:
+            #                 if left_pressed:
+            #                     car = self._race.cars[0]
+            #                     car.rotate(5*(2*math.pi)/360)
+            #                     car.teclat(-1)
+            #                 else:
+            #                     car.teclat(0)
+            #             car.current_speed = 7
+            #         else:
+            #             r = car._net.feedforward(car.collision_distances)
+            #             steer = r[0]
+            #             speed = r[1]
+            #             car.steer = steer[0]-0.5
+            #             car.rotate((steer[0]-0.5) * 10*(2*math.pi)/360)
+            #             car.current_speed = 7 # 3 + min(3, speed[0] * 3)
+
+            #self._race.simulate(elapsed_time)
+        elapsed_time = 80 / 1000
 
 
         if self._race.alives>0:
@@ -329,24 +373,50 @@ class SceneUsuari:
                                 speed = r[1]
                                 c.steer = steer[0] - 0.5
                                 c.rotate((steer[0] - 0.5) * 10 * (2 * math.pi) / 360)
-                            
+                            #c.current_speed = 7  # 3 + min(3, speed[0] * 3)
+                            #b=c.current_speed+5*(2*speed-1)
+
+                            # v1=c.current_speed + 5 * 0.03
+                            # v2=c.current_speed + 5 * 0.03
+                            # if v1>=10:
+                            #     c.current_speed=10
+                            # else:
+                            #     if v2<=1:
+                            #         c.current_speed=1
+                            #
+                            #
+                            # if speed== 1:
+                            #     c.current_speed = c.current_speed + 5 * 0.03
+                            # else:
+                            #     if speed == 0:
+                            #         c.current_speed = c.current_speed - 5 * 0.03
+                            #print(speed)
+                            #print(c.current_speed+5*(2*speed-1))
+                            #c.current_speed=5+5*(2*speed[0]-1)
+                            #revisar
+                                #scale = 0.15
+                                #c.current_speed = max(min(c.current_speed + scale*(2*speed[0]-1), 6), 3)
 
 
-                                
+                                ## ACELERACIO
+                                #c.current_speed = 3 + min(3, speed[0] * 3)
                                 c.current_speed = min(6,max(3,c.current_speed+(speed[0]-0.5)*5*0.03))
 
 
-                    
+                    #self._race.simulate(elapsed_time)
+                ##
+
+                #self._race.emulate(self._posicioX[self._temps],self._posicioY[self._temps],self._angle[self._temps],self._tecla[self._temps])
                 self._race.simulate(elapsed_time)
                 self._temps = self._temps +1
 
 
 
-           
+            ######################## PROVA MATEU ## ponderacio 3 i 4
                 for c in self._race.cars:
                     if not c.collision:
                         c.collision_time = self._race.total_time
-             
+                #####################
 
                 print("Cotxe:  "+ str(self._race.get_first_car().number))
                 print("Temps:  "+str(self._race.total_time))
