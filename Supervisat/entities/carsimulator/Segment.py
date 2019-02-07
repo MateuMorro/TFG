@@ -105,7 +105,7 @@ class Segment(object):
         projection_point = line_intersection(self.p1, self.p2, self.p3, self.p4)
 
         if projection_point is None:
-            # Consideramos que el principio y el fin son paralelas
+
             width_ini = (self.p2 - self.p1).length()
             width_end = (self.p4 - self.p3).length()
 
@@ -119,7 +119,7 @@ class Segment(object):
             intersection = segment_intersection(self._point_ini, self._point_end, point_a, point_b)
             return intersection
         else:
-            # no son paralelas
+            # no son paraleles
             return line_intersection(projection_point, point, self._point_ini, self._point_end)
 
     def get_start_position(self) -> (Point2D, float):
