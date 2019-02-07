@@ -24,7 +24,7 @@ class RaceUsuari(object):
 
         #Cotxo que duc jo
         car = CarUsuari(self._track, 2, 1, Point2D(-1, 0), 0,net.copy())
-        #car = CarUsuari(self._track, 2, 1, Point2D(-1, 0), 1, net.copy())
+
 
         start_position, angle, start_segment = self._track.get_start_position()
         car.bounds.position = start_position
@@ -55,7 +55,7 @@ class RaceUsuari(object):
 
     def reset(self):
         self.__total_time = 0
-        # obtenemos los pesos de los coches
+
         weights = [max(c.get_total_distance(), 0) for c in self._cars]
         total_weight = 0
         sum_weights = []
@@ -67,14 +67,11 @@ class RaceUsuari(object):
 
         self.__alives = self.__number_cars
         self._cars = []
-        # inicializacion de coches
 
 
-
-        # jo
 
         car = CarUsuari(self._track, 2, 1, Point2D(-1, 0), 0,self.__net.copy())
-        #car = CarUsuari(self._track, 2, 1, Point2D(-1, 0), 1, self.__net.copy())
+
         start_position, angle, start_segment = self._track.get_start_position()
         car.bounds.position = start_position
         car.bounds.rotation_in_radians = angle
@@ -89,7 +86,7 @@ class RaceUsuari(object):
 
         for x in range(1, self.__number_cars):
             car = CarUsuari(self._track, 2, 1, Point2D(-1, 0),1,self.__net.copy())
-            #car = CarUsuari(self._track, 2, 1, Point2D(-1, 0), 0, self.__net.copy())
+
             start_position, angle, start_segment = self._track.get_start_position()
             car.bounds.position = start_position
             car.bounds.rotation_in_radians = angle
@@ -200,16 +197,14 @@ class RaceUsuari(object):
                 c.colocar(x,y,angle+1)
                 #c.colocarAmbXarxa(sensors,tecla)
 
-                #miramos si ha habido colision
+
                 for segment in self._track._segments:
                     if segment.collides(c):
                         c.collision = True
 
                 if c.collision:
                     self.__alives = self.__alives - 1
-                #
-                # determinamos si hay cambio de segmento (al siguiente o al anterior)
-                # y calculamos la distancia total recorrido por los segmentos atravesados
+
                 ns = self._track.next_segment(c.current_segment)
                 if self.track.segments[ns].in_segment(c.bounds.position):
                     c.total_segment_distance = c.total_segment_distance + self.track.segments[
@@ -226,7 +221,6 @@ class RaceUsuari(object):
                         c.total_segment_distance = c.total_segment_distance - self.track.segments[
                             c.current_segment].total_distance
 
-                # distancia recorrida en el segmento actual
                 cs = self.track.segments[c.current_segment]
                 c.distance = (cs.point_ini - cs.advanced(c.bounds.position)).length()
 
@@ -242,7 +236,7 @@ class RaceUsuari(object):
             if not c.collision:
                 c.simulate(elapsed_time)
 
-                # miramos si ha habido colision
+
                 for segment in self._track._segments:
                     if segment.collides(c):
                         c.collision = True
@@ -250,8 +244,7 @@ class RaceUsuari(object):
                 if c.collision:
                     self.__alives = self.__alives - 1
 
-                # determinamos si hay cambio de segmento (al siguiente o al anterior)
-                # y calculamos la distancia total recorrido por los segmentos atravesados
+
                 ns = self._track.next_segment(c.current_segment)
                 if self.track.segments[ns].in_segment(c.bounds.position):
                     c.total_segment_distance = c.total_segment_distance + self.track.segments[c.current_segment].total_distance
@@ -266,11 +259,11 @@ class RaceUsuari(object):
                         c.current_segment = ps
                         c.total_segment_distance = c.total_segment_distance - self.track.segments[c.current_segment].total_distance
 
-                # distancia recorrida en el segmento actual
+
                 cs = self.track.segments[c.current_segment]
                 c.distance = (cs.point_ini - cs.advanced(c.bounds.position)).length()
 
-        #self._cars[0].torna()
+
 
     @property
     def cars(self) -> List[CarUsuari]:
