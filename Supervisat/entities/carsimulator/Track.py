@@ -32,7 +32,7 @@ class Track(object):
                 pn2 = p1 - vn.mul_by_value(width)
                 parray.append((pn1, pn2))
 
-            wall_width = 0.5 # crea los segmentos usando los pares de puntos, usando como ancho de la pared 0.5
+            wall_width = 0.5 
             for i in range(0, len(parray)):
                 j = (i+1) % len(parray)
                 p0 = parray[i][0]
