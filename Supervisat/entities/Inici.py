@@ -20,7 +20,7 @@ class Inici:
 
         Label(self.__ventana,text="Benvingut! Es troba en Car Machine Learning on els cotxes han entrenat mitjançant l'aprenentatge supervisat.",
                                      bg=colorFondo, fg=colorLletra).place(x=50, y=10)
-        Label(self.__ventana,text="Els cotxes s'han entrenat en 12 circuits. Els circuits 12,13 i 14 són els circuits test.",bg=colorFondo,fg=colorLletra).place(x=50,y=50)
+        Label(self.__ventana,text="Els cotxes s'han entrenat en 12 circuits. Els circuits 13,14 i 15 són els circuits test.",bg=colorFondo,fg=colorLletra).place(x=50,y=50)
 
         #self.viaje = Spinbox(self.__ventana, from_=1, to=15, wrap=True,textvariable=self.__circuit)
 
@@ -71,7 +71,7 @@ class Inici:
 
 
         Label(self.__ventana,
-              text="Introduzca el número de simulaciones (número entero mayor o igual a 1):",
+              text="Introdueix el nombre de simulacions (nombre enter major o igual a 1):",
               bg=colorFondo, fg=colorLletra).place(x=50, y=470)
         Entry(self.__ventana, textvariable=self.__simulaciones).place(x=50, y=500)
 
@@ -97,11 +97,4 @@ class Inici:
 
 
 
-
-#finestra=Inici()
-#finestra.start()
-#print("hola")
-
-#circuit=finestra.circuit()
-#print(circuit)
 
