@@ -1,6 +1,8 @@
 from typing import List
 
-from entities.geometry import Shape, Point2D, Triangle
+from entities.geometry.Shape import Shape
+from entities.geometry.Point2D import Point2D
+from entities.geometry.Triangle import Triangle
 
 
 def are_colliding(shape1: Shape, shape2: Shape) -> bool:
