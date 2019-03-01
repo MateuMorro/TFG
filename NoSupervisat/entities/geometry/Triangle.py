@@ -1,6 +1,7 @@
 from typing import List
 
-from entities.geometry import Shape, Point2D
+from entities.geometry.Shape import Shape
+from entities.geometry.Point2D import Point2D
 
 
 class Triangle(Shape):
