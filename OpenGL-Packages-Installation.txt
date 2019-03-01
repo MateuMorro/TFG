@@ -1,11 +1,11 @@
-Hay que instalar manualmente los paquetes PyOpengl y PyOpenGL_accelerate descargándoselos de:
+S'han d'instal·lar manualment els paquets PyOpengl i PyOpenGL_accelerate descarregant-los de:
 
 https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyopengl
 
-En caso de ser Windows 32 son los paquetes:
+En cas de ser Windows 32 són els paquets:
 PyOpenGL 3.1.3b2 cp36 cp36m win32.whl
 PyOpenGL_accelerate 3.1.3b2 cp36 cp36m win32.whl
 
-En caso de ser Windows 64 son los paquets:
+En cas de ser Windows 64 són els paquets:
 PyOpenGL 3.1.3b2 cp36 cp36m win_amd64.whl
 PyOpenGL_accelerate 3.1.3b2 cp36 cp36m win_amd64.whl
