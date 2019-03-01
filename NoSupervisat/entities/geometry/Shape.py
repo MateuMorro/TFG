@@ -1,7 +1,7 @@
 from typing import List
 from abc import abstractmethod
 
-from entities.geometry.Shape import Shape
+
 from entities.geometry.Point2D import Point2D
 
 
