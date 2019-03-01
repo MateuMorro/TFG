@@ -1,11 +1,12 @@
+A continuació es mostren els passos necessaris a seguir per a trobar els arxius a executar.
+
 * En el cas de l'aprenentatge supervisat s'ha d'executar l'arxiu OpenGLUsuari de:
 
-Supervisat  ->  entities -> OpenGLUsuari
+  Supervisat  ->  entities -> OpenGLUsuari
 
-* En el cas de l'aprenentatge supervisat s'ha d'executar l'arxiu OpenGLWindow de:
+* En el cas de l'aprenentatge no supervisat s'ha d'executar l'arxiu OpenGLWindow de:
 
-NoSupervisat  ->  entities -> OpenGLWindow
-
-
+  NoSupervisat  ->  entities -> OpenGLWindow
 
 
+En cas de voler importar el projecte de GitHub, en particular amb el PyCharm, un cop importat s'ha hagut d'indicar quines carpetes tenen el codi font.
