@@ -1,0 +1,11 @@
+* En el cas de l'aprenentatge supervisat s'ha d'executar l'arxiu OpenGLUsuari de:
+
+Supervisat  ->  entities -> OpenGLUsuari
+
+* En el cas de l'aprenentatge supervisat s'ha d'executar l'arxiu OpenGLWindow de:
+
+NoSupervisat  ->  entities -> OpenGLWindow
+
+
+
+
