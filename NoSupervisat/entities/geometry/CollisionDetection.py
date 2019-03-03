@@ -1,5 +1,9 @@
 from typing import List
 
+# habia esto
+#Shape from entities.geometry import Shape, Point2D, Triangle
+
+# si lo cambio por esto funciona
 from entities.geometry.Shape import Shape
 from entities.geometry.Point2D import Point2D
 from entities.geometry.Triangle import Triangle
