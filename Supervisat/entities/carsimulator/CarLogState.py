@@ -69,7 +69,7 @@ class CarLogState(object):
 # ESTO TIENE QUE SER UNA CLASE carregar circuit usuari
     def load(self) ->List[List[float]]:
 
-        #with open('..\\UsuariCircuits\\UsuariCircuit12.csv') as cs:
+        #with open('../UsuariCircuits/UsuariCircuit12.csv') as cs:
         #    entrada = csv.reader(cs)
         #entrada=LoadCircuitUsuari(self.__n).entrada()
         #for i in entrada:
