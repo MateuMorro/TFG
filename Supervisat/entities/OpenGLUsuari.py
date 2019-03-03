@@ -384,7 +384,7 @@ def main(circuit,usuari,cotxes,simulacions,xarxa,option):
 # eta = 0.05
 # xarxa.SGD(training_data, epochs, mini_batch_size, eta,test_data=None)
 # pickle.dumps(xarxa)
-# f = open('..\\Xarxes\\prova600-005.csv', 'wb')
+# f = open('../Xarxes/prova600-005.csv', 'wb')
 # pickle.dump(xarxa,f)
 # f.close()
 
@@ -400,13 +400,13 @@ def main(circuit,usuari,cotxes,simulacions,xarxa,option):
 
 def eleccio_de_la_xarxa(opcio):
     if opcio==1:
-        return pickle.load(open('..\\Xarxes\\prova220-002.csv', 'rb'))
+        return pickle.load(open('../Xarxes/prova220-002.csv', 'rb'))
     if opcio==2:
-        return pickle.load(open('..\\Xarxes\\prova265-0027.csv', 'rb'))
+        return pickle.load(open('../Xarxes/prova265-0027.csv', 'rb'))
     if opcio==3:
-        return pickle.load(open('..\\Xarxes\\prova269-00275.csv', 'rb'))
+        return pickle.load(open('../Xarxes/prova269-00275.csv', 'rb'))
     if opcio==4:
-        return pickle.load(open('..\\Xarxes\\prova600-007.csv', 'rb'))
+        return pickle.load(open('../Xarxes/prova600-007.csv', 'rb'))
 
 def eleccio_cotxes(u):
     if u==0:
@@ -431,7 +431,7 @@ usuari=finestra.usuari()
 
 
 
-#xarxa = pickle.load(open('..\\Xarxes\\prova265-0027.csv', 'rb'))
+#xarxa = pickle.load(open('../Xarxes/prova265-0027.csv', 'rb'))
 #circuit=15
 #cotxes=1
 #simulacions=1
