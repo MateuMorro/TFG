@@ -1,6 +1,7 @@
 from typing import List
 import math
 
+# from entities.geometry import Point2D, Shape, Positionable, Orientable
 from entities.geometry.Point2D import Point2D
 from entities.geometry.Shape import Shape
 from entities.geometry.Positionable import Positionable
