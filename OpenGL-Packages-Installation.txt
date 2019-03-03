@@ -9,3 +9,9 @@ PyOpenGL_accelerate 3.1.3b2 cp36 cp36m win32.whl
 En cas de ser Windows 64 són els paquets:
 PyOpenGL 3.1.3b2 cp36 cp36m win_amd64.whl
 PyOpenGL_accelerate 3.1.3b2 cp36 cp36m win_amd64.whl
+
+
+
+Instal·lació de GLUT per Linux. 
+A part dels paquets de OpenGL de Python, s'ha d'instal·lar manualment el paquet de OpenGL per Python en el sistema amb la instrucció:
+sudo apt-get install python-opengl
