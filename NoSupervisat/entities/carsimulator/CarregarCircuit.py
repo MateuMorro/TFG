@@ -8,77 +8,77 @@ class CarregarCircuit:
 
 
         if circuit==1:
-            with open('..\Circuits\circuit3.csv') as cs:
+            with open('../Circuits/circuit3.csv') as cs:
                 entrada = csv.reader(cs)
                 x = next(entrada)
                 y = next(entrada)
                 w = next(entrada)
                 self.__points,self.__widths=self.llistes(x,y,w)
         if circuit==2:
-            with open('..\Circuits\circuit4.csv') as cs:
+            with open('../Circuits/circuit4.csv') as cs:
                 entrada = csv.reader(cs)
                 x = next(entrada)
                 y = next(entrada)
                 w = next(entrada)
                 self.__points,self.__widths=self.llistes(x,y,w)
         if circuit==3:
-            with open('..\Circuits\circuit11.csv') as cs:
+            with open('../Circuits/circuit11.csv') as cs:
                 entrada = csv.reader(cs)
                 x = next(entrada)
                 y = next(entrada)
                 w = next(entrada)
                 self.__points,self.__widths=self.llistes(x,y,w)
         if circuit==4:
-            with open('..\Circuits\circuit6.csv') as cs:
+            with open('../Circuits/circuit6.csv') as cs:
                 entrada = csv.reader(cs)
                 x = next(entrada)
                 y = next(entrada)
                 w = next(entrada)
                 self.__points,self.__widths=self.llistes(x,y,w)
         if circuit==5:
-            with open('..\Circuits\circuit1.csv') as cs:
+            with open('../Circuits/circuit1.csv') as cs:
                 entrada = csv.reader(cs)
                 x = next(entrada)
                 y = next(entrada)
                 w = next(entrada)
                 self.__points,self.__widths=self.llistes(x,y,w)
         if circuit==6:
-            with open('..\Circuits\circuit2.csv') as cs:
+            with open('../Circuits/circuit2.csv') as cs:
                 entrada = csv.reader(cs)
                 x = next(entrada)
                 y = next(entrada)
                 w = next(entrada)
                 self.__points,self.__widths=self.llistes(x,y,w)
         if circuit==7:
-            with open('..\Circuits\circuit5.csv') as cs:
+            with open('../Circuits/circuit5.csv') as cs:
                 entrada = csv.reader(cs)
                 x = next(entrada)
                 y = next(entrada)
                 w = next(entrada)
                 self.__points,self.__widths=self.llistes(x,y,w)
         if circuit==8:
-            with open('..\Circuits\circuit7.csv') as cs:
+            with open('../Circuits/circuit7.csv') as cs:
                 entrada = csv.reader(cs)
                 x = next(entrada)
                 y = next(entrada)
                 w = next(entrada)
                 self.__points,self.__widths=self.llistes(x,y,w)
         if circuit==9:
-            with open('..\Circuits\circuit8.csv') as cs:
+            with open('../Circuits/circuit8.csv') as cs:
                 entrada = csv.reader(cs)
                 x = next(entrada)
                 y = next(entrada)
                 w = next(entrada)
                 self.__points,self.__widths=self.llistes(x,y,w)
         if circuit==10:
-            with open('..\Circuits\circuit10.csv') as cs:
+            with open('../Circuits/circuit10.csv') as cs:
                 entrada = csv.reader(cs)
                 x = next(entrada)
                 y = next(entrada)
                 w = next(entrada)
                 self.__points,self.__widths=self.llistes(x,y,w)
         if circuit==11:
-            with open('..\Circuits\circuit9.csv') as cs:
+            with open('../Circuits/circuit9.csv') as cs:
                 entrada = csv.reader(cs)
                 x = next(entrada)
                 y = next(entrada)
@@ -86,14 +86,14 @@ class CarregarCircuit:
                 self.__points,self.__widths=self.llistes(x,y,w)
 
         if circuit==12:
-            with open('..\Circuits\circuit12.txt') as cs:
+            with open('../Circuits/circuit12.txt') as cs:
                 entrada = csv.reader(cs)
                 x = next(entrada)
                 y = next(entrada)
                 w = next(entrada)
                 self.__points,self.__widths=self.llistes(x,y,w)
         if circuit==13:
-            with open('..\Circuits\circuitTest1.txt') as cs:
+            with open('../Circuits/circuitTest1.txt') as cs:
                 entrada = csv.reader(cs)
                 x = next(entrada)
                 y = next(entrada)
@@ -101,7 +101,7 @@ class CarregarCircuit:
                 self.__points,self.__widths=self.llistes(x,y,w)
 
         if circuit==14:
-            with open('..\Circuits\CircuitTest2.txt') as cs:
+            with open('../Circuits/CircuitTest2.txt') as cs:
                 entrada = csv.reader(cs)
                 x = next(entrada)
                 y = next(entrada)
@@ -109,7 +109,7 @@ class CarregarCircuit:
                 self.__points,self.__widths=self.llistes(x,y,w)
 
         if circuit==15:
-            with open('..\Circuits\CircuitTest.csv') as cs:
+            with open('../Circuits/CircuitTest.csv') as cs:
                 entrada = csv.reader(cs)
                 x = next(entrada)
                 y = next(entrada)
