@@ -3,7 +3,6 @@ from typing import List
 from entities.geometry.Point2D import Point2D
 from entities.geometry.Shape import Shape
 
-
 class Polygon(Shape):
     def __init__(self, points: List[Point2D]):
         super(Polygon, self).__init__()
